@@ -10,9 +10,12 @@ Team members:
 - Sam Walczak
 - Hexuan Zhang.
 
+[Instruction](https://drive.google.com/file/d/18eDxHup4DcRabKuPZ-gJcgGCNsvFwjtj/view?usp=sharing)
 
-Helpful Resources
-1. Step One
+## Step One
+### Helpful Resources
    1. [getting-started-tutorial](https://docs.snowflake.com/en/user-guide/getting-started-tutorial.html)
    2. [Loading Data into Snowflake](https://docs.snowflake.com/en/user-guide-data-load.html)
    3. [Data Loading / Unloading DDL](https://docs.snowflake.com/en/sql-reference/ddl-stage.html)
+
+### Scripts
