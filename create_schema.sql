@@ -1,0 +1,11 @@
+USE DATABASE yesql_customers;
+CREATE OR REPLACE SCHEMA raw;
+
+USE DATABASE yesql_employees;
+CREATE OR REPLACE SCHEMA raw;
+
+USE DATABASE yesql_products;
+CREATE OR REPLACE SCHEMA raw;
+
+USE DATABASE yesql_sales;
+CREATE OR REPLACE SCHEMA raw;
