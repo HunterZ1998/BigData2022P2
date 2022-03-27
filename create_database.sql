@@ -1,4 +1,7 @@
-create or replace database yesql_customers;
-create or replace database yesql_employees;
-create or replace database yesql_products;
-create or replace database yesql_sales;
+CREATE OR REPLACE DATABASE yesql_customers;
+
+CREATE OR REPLACE DATABASE yesql_employees;
+
+CREATE OR REPLACE DATABASE yesql_products;
+
+CREATE OR REPLACE DATABASE yesql_sales;
