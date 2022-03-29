@@ -1,0 +1,111 @@
+# Connect to SnowSQL
+################################################################################
+snowsql
+
+
+# Create a database
+################################################################################
+create or replace database yesql_sales;
+
+
+
+# Create a Schema
+################################################################################
+Create transient schema raw; 
+
+
+
+
+# Create tables
+################################################################################
+Create or replace table customers (
+CustomerID int ,
+FirstName string ,
+MiddleInitial string ,
+LastName string
+);
+
+Create or replace table employees (
+EmployeeID int ,
+FirstName string ,
+MiddleInitial string ,
+LastName string ,
+Region string
+);
+
+Create or replace table products (
+ProductID int ,
+Name string ,
+Price decimal
+);
+
+Create or replace table sales (
+OrderID int ,
+SalesPersonID int ,
+CustomerID int ,
+ProduceID int ,
+Quantity int ,
+Date timestamp
+);
+
+
+
+
+# Create File Format Object
+################################################################################
+create or replace file format mycsvformat
+  type = 'CSV'
+  field_delimiter = '|'
+  skip_header = 1;
+
+create or replace file format mycsvformat2
+  type = 'CSV'
+  field_delimiter = ','
+  skip_header = 1;
+
+
+
+
+# Create Stages
+################################################################################
+create stage customers_stage
+  url = 's3://seng5709/customers/'
+  file_format = mycsvformat
+;
+
+create stage employees_stage
+  url = 's3://seng5709/employees/'
+  file_format = mycsvformat2
+;
+
+create stage products_stage
+  url = 's3://seng5709/products/'
+  file_format = mycsvformat
+;
+
+create stage sales_stage
+  url = 's3://seng5709/sales/'
+  file_format = mycsvformat
+;
+
+
+
+
+# Load Data Into Stages
+################################################################################
+copy into customers
+  from @customers_stage
+  pattern='.*Customers.*.csv';
+
+copy into employees
+  from @employees_stage
+  pattern='.*Employees.*.csv';
+
+copy into products
+  from @products_stage
+  pattern='.*Products.*.csv';
+
+copy into sales
+  from @sales_stage
+  pattern='.*Sales.*.csv';
+
