@@ -83,6 +83,18 @@ TODO:
 
 #### 1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
 
+Using materialized views could be beneficial when there is a sub-query that is used a lot by many people in many queries, but the sub-query itself is expensive to run. In this case, we can create a materialized view for this particular sub-query. Therefore any query involves this sub-query can start from the materialized view, instead of executing from scratch. 
+
+A use case of using materialized view in this dataset is ...
+
+Reference: [Working with Materialized Views](https://docs.snowflake.com/en/user-guide/views-materialized.html)
+
+Using clustering could be beneficial when ...
+
+A use case of using clustering in this dataset is ...
+
+Reference: [Clustering Keys & Clustered Tables](https://docs.snowflake.com/en/user-guide/tables-clustering-keys.html)
+
 #### 2. Removal script.
 See sql file and command in [Removal Script](#3-removal-script).
 
