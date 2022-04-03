@@ -68,12 +68,16 @@ See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-
 
 #### Step 2: Prepare Data for Business Consumption.
 ##### 1. Raw data quality issue
+TODO:
 
 ##### 2. Create `curated` schema
+TODO:
 
 ##### 3. ?
+TODO:
 
-##### 4. Create views. 
+##### 4. Create views
+TODO:
 
 ### Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
 
@@ -83,3 +87,4 @@ See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-
 See sql file and command in [Removal Script](#3-removal-script).
 
 #### 3. ?
+TODO:
