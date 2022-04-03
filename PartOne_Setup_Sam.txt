@@ -43,7 +43,7 @@ Create or replace table sales (
 OrderID int ,
 SalesPersonID int ,
 CustomerID int ,
-ProduceID int ,
+ProductID int ,
 Quantity int ,
 Date timestamp
 );
