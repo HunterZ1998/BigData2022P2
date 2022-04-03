@@ -11,7 +11,7 @@ create or replace database yesql_sales;
 
 # Create a Schema
 ################################################################################
-Create transient schema raw; 
+Create schema raw; 
 
 
 
