@@ -1,8 +1,8 @@
-# CSCI 5751 Project 2
+# CSCI 5751 Project 2 - Snowflake POC
 
 Group: yeSQL
 
-Slack Channel: yeSQL
+Slack Channel: [yeSQL](https://umndataspring2022.slack.com/archives/C02V04QB4F9)
 
 Team members: 
 - John Carruth
@@ -14,6 +14,8 @@ Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDx
 
 ## Test
 ### 1. Set Up
+> Please make sure you have a ready-to-use CLI client [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql.html).
+
 1. Clone Github repository.
 ```
 git clone https://github.com/HunterZ1998/BigData2022P2.git
@@ -50,6 +52,8 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f crea
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load_data.sql
 ```
 
+6. TODO:
+
 ### 3. Removal Script
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remove_all.sql
@@ -59,7 +63,7 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remo
 
 ### Deliverable 2: Data load, Database, Tables, Views
 #### Step 1: Get and Load Raw Data
-See sql files and  in [Run test files in order (1-5)](#2-run-test-files-in-order)
+See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-in-order).
 
 #### Step 2: Prepare Data for Business Consumption.
 ##### 1. Raw data quality issue
@@ -75,5 +79,6 @@ See sql files and  in [Run test files in order (1-5)](#2-run-test-files-in-order
 #### 1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
 
 #### 2. Removal script.
+See sql file and command in [Removal Script](#3-removal-script).
 
 #### 3. ?
