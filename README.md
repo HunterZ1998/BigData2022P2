@@ -12,7 +12,8 @@ Team members:
 
 Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDxHup4DcRabKuPZ-gJcgGCNsvFwjtj/view?usp=sharing)
 
-## Set Up
+## Test
+### 1. Set Up
 1. Clone Github repository.
 ```
 git clone https://github.com/HunterZ1998/BigData2022P2.git
@@ -23,7 +24,7 @@ git clone https://github.com/HunterZ1998/BigData2022P2.git
 cd BigData2022P2
 ```
 
-## Test: run all files in order
+### 2. Run test files in order
 1. Create database.
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_database.sql
@@ -49,34 +50,29 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f crea
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load_data.sql
 ```
 
-## Removal Script
+### 3. Removal Script
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remove_all.sql
 ```
 
+## Notes (according to instruction)
 
+### Deliverable 2: Data load, Database, Tables, Views
+#### Step 1: Get and Load Raw Data
 
-## Deliverable 2: Data load, Database, Tables, Views
-### Step 1: Get and Load Raw Data
+#### Step 2: Prepare Data for Business Consumption.
+##### 1. Raw data quality issue
 
-### Step 2: Prepare Data for Business Consumption.
-#### 1. Raw data quality issue
+##### 2. Create `curated` schema
 
-#### 2. Create `curated` schema
+##### 3. ?
 
-#### 3. ?
+##### 4. Create views. 
 
-#### 4. Create views. 
-
-## Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
+### Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
 
 #### 1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
 
-
-
 #### 2. Removal script.
 
-
 #### 3. ?
-
-##### 1. All sql files to run in order
