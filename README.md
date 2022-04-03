@@ -55,9 +55,13 @@ snowsql -f load_data.sql
 
 ## Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
 
-1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
+#### 1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
 
-2. Removal script.
+
+
+#### 2. Removal script.
 ```
 snowsql -f remove_all.sql
 ```
+
+#### 3. ?
