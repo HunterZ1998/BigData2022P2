@@ -14,7 +14,7 @@ Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDx
 
 ## Test
 ### 1. Set Up
-> Please make sure you have a ready-to-use CLI client [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql.html). No configuration is required for SnowSQL. You will use a testing user `tester` with Key Pair Authentication to run the tests. 
+> Please make sure you have a ready-to-use CLI client [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql.html). **No** configuration is required for SnowSQL. You will use a testing user `tester` with **Key Pair Authentication** to run the tests. Run all following commands in **terminal**.
 
 1. Clone Github repository.
 ```
@@ -55,6 +55,7 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load
 6. TODO:
 
 ### 3. Removal Script
+Run this command in terminal to remove the whole `yesql` database. 
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remove_all.sql
 ```
