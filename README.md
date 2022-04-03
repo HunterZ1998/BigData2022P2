@@ -8,7 +8,7 @@ Team members:
 - John Carruth
 - Yuchuan Huang
 - Sam Walczak
-- Hexuan Zhang.
+- Hexuan Zhang
 
 Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDxHup4DcRabKuPZ-gJcgGCNsvFwjtj/view?usp=sharing)
 
