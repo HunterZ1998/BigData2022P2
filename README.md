@@ -12,6 +12,12 @@ Team members:
 
 Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDxHup4DcRabKuPZ-gJcgGCNsvFwjtj/view?usp=sharing)
 
-## Step One
+## Set Up
+1. Clone repository.
+```
+git clone https://github.com/HunterZ1998/BigData2022P2.git
+```
 
-### Scripts
+## Deliverable 2: Data load, Database, Tables, Views
+
+## Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
