@@ -13,9 +13,14 @@ Team members:
 Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDxHup4DcRabKuPZ-gJcgGCNsvFwjtj/view?usp=sharing)
 
 ## Set Up
-1. Clone repository.
+1. Clone Github repository.
 ```
 git clone https://github.com/HunterZ1998/BigData2022P2.git
+```
+
+2. Change directory to Github repo. (**Please run all following commands in the directory `<path>/BigData2022P2`**)
+```
+cd BigData2022P2
 ```
 
 ## Deliverable 2: Data load, Database, Tables, Views
