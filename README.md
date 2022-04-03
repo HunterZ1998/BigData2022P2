@@ -156,11 +156,11 @@ A use case of using clustering in this dataset is: the company always need to lo
 ```
 SELECT *
 FROM sales
-WHERE to_date(Date) = '2020-01-01'
+WHERE to_date(Date) = '2020-01-01';
 
 SELECT *
 FROM sales
-WHERE to_date(Date) = '2020-01-02'
+WHERE to_date(Date) = '2020-01-02';
 
 ...
 ```
