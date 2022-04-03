@@ -104,7 +104,49 @@ TODO:
 
 Using materialized views could be beneficial when there is a sub-query that is used a lot by many people in many queries, but the sub-query itself is expensive to run. In this case, we can create a materialized view for this particular sub-query. Therefore any query involves this sub-query can start from the materialized view, instead of executing from scratch. 
 
-A use case of using materialized view in this dataset is ...
+A use case of using materialized view in this dataset is: the company wants to have a deep insight about its business in the north region. It wants to have three different reports on low-price (0-100), mid-price (100-500) and high-price (>500) products sales in the north region. 
+
+The data about product sales is in the `sales` table, while the information about region is only in the `employees` table, and the information about price is only in the `product` table. 
+
+An example set of queries without materialized view could be:
+```
+SELECT *
+FROM (
+    SELECT S.*, E.*, P.*
+    FROM sales S, employee E, product P
+    WHERE E.region = 'North' AND S.employeeID = E.employeeID AND S.productID = P.productID
+) north_sale
+WHERE north_sale.price > 0 AND north_sale.price <= 100;
+
+SELECT *
+FROM (
+    SELECT S.*, E.*, P.*
+    FROM sales S, employee E, product P
+    WHERE E.region = 'North' AND S.employeeID = E.employeeID AND S.productID = P.productID
+) north_sale
+WHERE north_sale.price > 100 AND north_sale.price <= 500;
+
+SELECT *
+FROM (
+    SELECT S.*, E.*, P.*
+    FROM sales S, employee E, product P
+    WHERE E.region = 'North' AND S.employeeID = E.employeeID AND S.productID = P.productID
+) north_sale
+WHERE north_sale.price > 500;
+```
+
+In this set of queries, the inner sub-query is expensive as it joins three tables and it is executed from scratch for every query. By using the materialized view, we can cache the result for the inner sub-query can use it for any later queries.  An example of using materialized view is shown below. 
+
+```
+CREATE MATERIALIZED VIEW north_sale_mv
+    SELECT S.*, E.*, P.*
+    FROM sales S, employee E, product P
+    WHERE E.region = 'North' AND S.employeeID = E.employeeID AND S.productID = P.productID;
+
+SELECT * FROM north_sale_mv WHERE north_sale.price > 0 AND north_sale.price <= 100;
+SELECT * FROM north_sale_mv WHERE north_sale.price > 100 AND north_sale.price <= 500;
+SELECT * FROM north_sale_mv WHERE north_sale.price > 500;
+```
 
 Reference: [Working with Materialized Views](https://docs.snowflake.com/en/user-guide/views-materialized.html)
 
