@@ -14,7 +14,7 @@ Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDx
 
 ## Test
 ### 1. Set Up
-> Please make sure you have a ready-to-use CLI client [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql.html).
+> Please make sure you have a ready-to-use CLI client [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql.html). No configuration is required for SnowSQL. You will use a testing user `tester` with Key Pair Authentication to run the tests. 
 
 1. Clone Github repository.
 ```
