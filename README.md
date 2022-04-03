@@ -59,6 +59,7 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remo
 
 ### Deliverable 2: Data load, Database, Tables, Views
 #### Step 1: Get and Load Raw Data
+See sql files and  in [Run test files in order (1-5)](#2-run-test-files-in-order)
 
 #### Step 2: Prepare Data for Business Consumption.
 ##### 1. Raw data quality issue
