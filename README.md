@@ -150,7 +150,7 @@ SELECT * FROM north_sale_mv WHERE north_sale.price > 500;
 
 Reference: [Working with Materialized Views](https://docs.snowflake.com/en/user-guide/views-materialized.html)
 
-Using clustering could be beneficial when there is lot selective queries on a particular field on a big table. If the table is clustered on the field, then Snowflake can easily prune a lot of the micro-partitions that does not have the wanted value. On the contrary, if the table is not clustered on the field, the wanted value may scatter in all the micro-partitions, so Snowflake must look into every micro-partitions to find for the value. 
+(2) Using clustering could be beneficial when there is lot selective queries on a particular field on a big table. If the table is clustered on the field, then Snowflake can easily prune a lot of the micro-partitions that does not have the wanted value. On the contrary, if the table is not clustered on the field, the wanted value may scatter in all the micro-partitions, so Snowflake must look into every micro-partitions to find for the value. 
 
 A use case of using clustering in this dataset is: the company always need to look at the sales records on a single day. It requires to select the sales record on the date. An example of such query could be:
 ```
