@@ -102,7 +102,7 @@ TODO:
 
 #### 1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
 
-Using materialized views could be beneficial when there is a sub-query that is used a lot by many people in many queries, but the sub-query itself is expensive to run. In this case, we can create a materialized view for this particular sub-query. Therefore any query involves this sub-query can start from the materialized view, instead of executing from scratch. 
+(1) Using materialized views could be beneficial when there is a sub-query that is used a lot by many people in many queries, but the sub-query itself is expensive to run. In this case, we can create a materialized view for this particular sub-query. Therefore any query involves this sub-query can start from the materialized view, instead of executing from scratch. 
 
 A use case of using materialized view in this dataset is: the company wants to have a deep insight about its business in the north region. It wants to have three different reports on low-price (0-100), mid-price (100-500) and high-price (>500) products sales in the north region. 
 
@@ -150,9 +150,22 @@ SELECT * FROM north_sale_mv WHERE north_sale.price > 500;
 
 Reference: [Working with Materialized Views](https://docs.snowflake.com/en/user-guide/views-materialized.html)
 
-Using clustering could be beneficial when ...
+Using clustering could be beneficial when there is lot selective queries on a particular field on a big table. If the table is clustered on the field, then Snowflake can easily prune a lot of the micro-partitions that does not have the wanted value. On the contrary, if the table is not clustered on the field, the wanted value may scatter in all the micro-partitions, so Snowflake must look into every micro-partitions to find for the value. 
 
-A use case of using clustering in this dataset is ...
+A use case of using clustering in this dataset is: the company always need to look at the sales records on a single day. It requires to select the sales record on the date. An example of such query could be:
+```
+SELECT *
+FROM sales
+WHERE to_date(Date) = '2020-01-01'
+
+SELECT *
+FROM sales
+WHERE to_date(Date) = '2020-01-02'
+
+...
+```
+
+If the table is not clustered on `Date`, the record on 2020-01-01 can exist on any micro-partition, so Snowflake must scan every micro-partition to get the result. If the table is clustered on `Date`, Snowflake can easily know if a micro-partition contains records on 2020-01-01 without going into the partition. This will boost the performance. 
 
 Reference: [Clustering Keys & Clustered Tables](https://docs.snowflake.com/en/user-guide/tables-clustering-keys.html)
 
