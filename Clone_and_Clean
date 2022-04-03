@@ -14,3 +14,7 @@ ALTER TABLE sales RENAME COLUMN salespersonid to employeeid;
 # Drop duplicates 
 insert overwrite into customers
 SELECT * FROM customers GROUP BY customerid, firstname, middleinitial, lastname;
+
+#Capitalize initial for region
+insert overwrite into employees
+select employeeid, firstname, middleinitial, lastname, initcap(region) from employees;
