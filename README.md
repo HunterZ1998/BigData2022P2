@@ -30,30 +30,34 @@ snowsql -f create_database.sql
 snowsql -f create_schema.sql
 ```
 
-3. Create tables.
+3. Create table.
 ```
 snowsql -f create_table.sql
 ```
 
-4. Create file format object.
+4. Create file format object then create stage.
 ```
-snowsql -f create_file_format_object.sql
-```
-
-5. Create stage.
-```
-snowsql -f create_stage.sql
+snowsql -f create_file_format_object.sql -f create_stage.sql
 ```
 
-6. Load data.
+5. Load data.
 ```
 snowsql -f load_data.sql
 ```
 ### Step 2: Prepare Data for Business Consumption.
+#### 1. Raw data quality issue
+
+#### 2. Create `curated` schema
+
+#### 3. ?
+
+#### 4. Create views. 
 
 ## Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
 
-Remove all.
+1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
+
+2. Removal script.
 ```
 snowsql -f remove_all.sql
 ```
