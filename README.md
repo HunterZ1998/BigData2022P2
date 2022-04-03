@@ -19,5 +19,7 @@ git clone https://github.com/HunterZ1998/BigData2022P2.git
 ```
 
 ## Deliverable 2: Data load, Database, Tables, Views
+### Step 1: Get and Load Raw Data
+### Step 2: Prepare Data for Business Consumption.
 
 ## Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
