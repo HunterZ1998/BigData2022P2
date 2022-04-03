@@ -22,27 +22,27 @@ git clone https://github.com/HunterZ1998/BigData2022P2.git
 ### Step 1: Get and Load Raw Data
 1. Create database.
 ```
-snowsql -f create_database.sql
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_database.sql
 ```
 
 2. Create schema.
 ```
-snowsql -f create_schema.sql
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_schema.sql
 ```
 
 3. Create table.
 ```
-snowsql -f create_table.sql
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_table.sql
 ```
 
 4. Create file format object then create stage.
 ```
-snowsql -f create_file_format_object.sql -f create_stage.sql
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_file_format_object.sql -f create_stage.sql
 ```
 
 5. Load data.
 ```
-snowsql -f load_data.sql
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load_data.sql
 ```
 ### Step 2: Prepare Data for Business Consumption.
 #### 1. Raw data quality issue
@@ -61,7 +61,7 @@ snowsql -f load_data.sql
 
 #### 2. Removal script.
 ```
-snowsql -f remove_all.sql
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remove_all.sql
 ```
 
 #### 3. ?
