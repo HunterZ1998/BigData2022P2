@@ -15,6 +15,8 @@ ALTER TABLE sales RENAME COLUMN salespersonid to employeeid;
 insert overwrite into customers
 SELECT * FROM customers GROUP BY customerid, firstname, middleinitial, lastname;
 
-#Capitalize initial for region
+#Capitalize initials
 insert overwrite into employees
 select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname), initcap(region) from employees;
+insert overwrite into customers
+select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname), from customers;
