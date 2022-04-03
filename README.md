@@ -12,6 +12,25 @@ Team members:
 
 Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDxHup4DcRabKuPZ-gJcgGCNsvFwjtj/view?usp=sharing)
 
+**Table of Contents**
+- [CSCI 5751 Project 2 - Snowflake POC](#csci-5751-project-2---snowflake-poc)
+  - [Test](#test)
+    - [1. Set Up](#1-set-up)
+    - [2. Run test files in order](#2-run-test-files-in-order)
+    - [3. Removal Script](#3-removal-script)
+  - [Notes (according to instruction)](#notes-according-to-instruction)
+    - [Deliverable 2: Data load, Database, Tables, Views](#deliverable-2-data-load-database-tables-views)
+      - [Step 1: Get and Load Raw Data](#step-1-get-and-load-raw-data)
+      - [Step 2: Prepare Data for Business Consumption.](#step-2-prepare-data-for-business-consumption)
+        - [1. Raw data quality issue](#1-raw-data-quality-issue)
+        - [2. Create `curated` schema](#2-create-curated-schema)
+        - [3. ?](#3-)
+        - [4. Create views](#4-create-views)
+    - [Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation](#deliverable-3-materialized-views-clustering-run-script-drop-script-documentation)
+      - [1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.](#1-give-two-specific-use-cases-where-clustering-and-materialized-views-may-be-beneficial-to-the-consumption-of-the-sales-data)
+      - [2. Removal script.](#2-removal-script)
+      - [3. ?](#3--1)
+
 ## Test
 ### 1. Set Up
 > Please make sure you have a ready-to-use CLI client [SnowSQL](https://docs.snowflake.com/en/user-guide/snowsql.html). **No** configuration is required for SnowSQL. You will use a testing user `tester` with **Key Pair Authentication** to run the tests. Run all following commands in **terminal**.
