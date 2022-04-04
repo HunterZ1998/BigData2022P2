@@ -1,4 +1,4 @@
-USE SCHEMA yesql.raw;
+USE SCHEMA yesql_sales.raw;
 
 
 COPY INTO customers

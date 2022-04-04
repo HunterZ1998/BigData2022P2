@@ -1,4 +1,4 @@
-USE SCHEMA yesql.raw;
+USE SCHEMA yesql_sales.raw;
 
 
 CREATE OR REPLACE TABLE customers (

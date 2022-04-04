@@ -1,2 +1,2 @@
-USE DATABASE yesql;
+USE DATABASE yesql_sales;
 CREATE OR REPLACE SCHEMA raw;

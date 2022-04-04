@@ -1,4 +1,4 @@
-USE SCHEMA yesql.raw;
+USE SCHEMA yesql_sales.raw;
 
 -- create file format object
 CREATE OR REPLACE FILE FORMAT csv_format_vertical_bar
