@@ -71,7 +71,16 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f crea
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load_data.sql
 ```
 
-6. TODO:
+6. Create `curated` schema and clean data.
+```
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f Clone_and_Clean.sql
+```
+
+7. Create views in `curated` schema.
+```
+snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_views_question4.sql
+```
+
 
 ### 3. Removal Script
 Run this command in terminal to remove the whole `yesql` database. 
