@@ -19,4 +19,4 @@ SELECT * FROM customers GROUP BY customerid, firstname, middleinitial, lastname;
 insert overwrite into employees
 select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname), initcap(region) from employees;
 insert overwrite into customers
-select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname), from customers;
+select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname) from customers;
