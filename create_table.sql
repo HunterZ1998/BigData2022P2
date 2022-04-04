@@ -26,7 +26,7 @@ CREATE OR REPLACE TABLE sales (
     OrderID INT ,
     SalesPersonID INT ,
     CustomerID INT ,
-    ProduceID INT ,
+    ProductID INT ,
     Quantity INT ,
     Date TIMESTAMP
 );
