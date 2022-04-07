@@ -151,9 +151,9 @@ See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-
 
 #### Step 2: Prepare Data for Business Consumption.
 ##### 1. Raw data quality issue
-(1) Problem: Mis-spelled column. Sales.SalesPersonID same as EmployeeID in Employees table
+(1) Problem: Mis-spelled column. Sales.SalesPersonID same as EmployeeID in Employees table.
 
-Solution: Changed column name Sales.SalesPersonID to EmployeeID
+Solution: Changed column name Sales.SalesPersonID to EmployeeID.
 
 
 ##### 2. Create `curated` schema
