@@ -166,7 +166,7 @@ All tables checked to ensure:
 (3) Problem: Time zone of imported data unknown.\
   Solution: No solution, as we do not know the origin time zone we cannot convert to UTC.\
 (4) Problem: Case of STRING columns inconsistent (for example: could lead to alex and Alex being counted as different entries).\
-  Solution: Capitalize first letter of all STRING field entries (except Products as they could be case sensitive).\
+  Solution: Capitalize first letter of all STRING field entries (except Products as they could be case sensitive).
 
 ##### 2. Create `curated` schema
 See sql file and command in [Run test files in order (6)](#2-run-test-files-in-order).
