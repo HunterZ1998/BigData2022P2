@@ -14,6 +14,9 @@ ALTER TABLE sales RENAME COLUMN salespersonid to employeeid;
 insert overwrite into customers
 SELECT * FROM customers GROUP BY customerid, firstname, middleinitial, lastname;
 
+--# Remove unreasonable middle inital 
+UPDATE employees SET middleinitial = NULL WHERE middleinitial = '\'';
+
 --#Capitalize initials
 insert overwrite into employees
 select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname), initcap(region) from employees;
