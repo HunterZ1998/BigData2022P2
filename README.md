@@ -50,6 +50,8 @@ cd BigData2022P2
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f create_database.sql
 ```
+Expected output:
+> Database YESQL_SALES successfully created.
 
 2. Create schema.
 ```
