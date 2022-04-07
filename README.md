@@ -182,4 +182,4 @@ Reference: [Clustering Keys & Clustered Tables](https://docs.snowflake.com/en/us
 See sql file and command in [Removal Script](#3-removal-script).
 
 #### 3. ReadMe.
-TODO:
+Please follow the section [Run test files in order](#2-run-test-files-in-order) to run the tests. 
