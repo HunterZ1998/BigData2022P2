@@ -150,11 +150,23 @@ Expected output:
 See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-in-order).
 
 #### Step 2: Prepare Data for Business Consumption.
+All tables checked to ensure:
+- Unique primary keys (first column of each table)
+- Repeat values checked (different ID, same field values)
+- All table columns checked for NULL values
+- Range of reference ID values in Sales table (to other tables) checked against range of IDs in those tables (secondary keys)
+- Sales table quantity column was checked for zero or negative valued entries
+- Products table prices column was checked for zero or negative valued entries (48 products with price = 0, left in table to track inventory)
+
 ##### 1. Raw data quality issue
-(1) Problem: Mis-spelled column. Sales.SalesPersonID same as EmployeeID in Employees table.
-
-Solution: Changed column name Sales.SalesPersonID to EmployeeID.
-
+(1) Problem: Mis-spelled column reference: Sales.SalesPersonID refers to the column EmployeeID in the Employees table.
+  Solution: Changed column name Sales.SalesPersonID to EmployeeID.
+(2) Problem: In the Employees table, the employee associated with EMPLOYEEID = 15, had the middle initial input as an apostrophe.
+  Solution: Enforce names must include at least one letter. EMPLOYEEID = 15 middle initial changed to NULL. 
+(3) Problem: Time zone of imported data unknown
+  Solution: No solution, as we do not know the origin time zone we cannot convert to UTC.
+(4) Problem: Case of STRING columns inconsistent (for example: could lead to alex and Alex being counted as different entries)
+  Solution: Capitalize first letter of all STRING field entries
 
 ##### 2. Create `curated` schema
 See sql file and command in [Run test files in order (6)](#2-run-test-files-in-order).
@@ -169,13 +181,13 @@ See sql file and command in [Run test files in order (7)](#2-run-test-files-in-o
 
 #### 1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.
 
-(1) Using materialized views could be beneficial when there is a sub-query that is used a lot by many people in many queries, but the sub-query itself is expensive to run. In this case, we can create a materialized view for this particular sub-query. Therefore any query involves this sub-query can start from the materialized view, instead of executing from scratch. 
+(1) Using materialized views could be beneficial when there is a sub-query that is used a lot by many people in many queries, but the sub-query itself is expensive to run. In this case, a materialized view can be created for this particular sub-query. Therefore, any query involving this sub-query can start from the materialized view, instead of executing from scratch. 
 
-A use case of using materialized view in this dataset is: the company wants to have a deep insight about its business in the north region. It wants to have three different reports on low-price (0-100), mid-price (100-500) and high-price (>500) products sales in the north region. 
+A use case of using materialized views in this dataset is: the company wants to have a deep insight about its business in the north region. It wants to have three different reports on low-priced (0-100), mid-priced (100-500) and high-priced (>500) products sales in the north region. 
 
 The data about product sales is in the `sales` table, while the information about region is only in the `employees` table, and the information about price is only in the `product` table. 
 
-An example set of queries without materialized view could be:
+An example set of queries without the materialized view could be:
 ```
 SELECT *
 FROM (
@@ -202,7 +214,7 @@ FROM (
 WHERE north_sale.price > 500;
 ```
 
-In this set of queries, the inner sub-query is expensive as it joins three tables and it is executed from scratch for every query. By using the materialized view, we can cache the result for the inner sub-query can use it for any later queries.  An example of using materialized view is shown below. 
+In this set of queries, the inner sub-query is expensive as it joins three tables and it is executed from scratch for every query. By using the materialized view, the result will be cached for the inner sub-query and it can be used for any later queries.  An example of using materialized view is shown below. 
 
 ```
 CREATE MATERIALIZED VIEW north_sale_mv
@@ -217,9 +229,9 @@ SELECT * FROM north_sale_mv WHERE north_sale.price > 500;
 
 Reference: [Working with Materialized Views](https://docs.snowflake.com/en/user-guide/views-materialized.html)
 
-(2) Using clustering could be beneficial when there is lot selective queries on a particular field on a big table. If the table is clustered on the field, then Snowflake can easily prune a lot of the micro-partitions that does not have the wanted value. On the contrary, if the table is not clustered on the field, the wanted value may scatter in all the micro-partitions, so Snowflake must look into every micro-partitions to find for the value. 
+(2) Using clustering could be beneficial when there is lot of selective queries on a particular field on a big table. If the table is clustered on the field, then Snowflake can easily prune a lot of the micro-partitions that do not have the desired value. On the contrary, if the table is not clustered on the field, the desired value may scatter across the micro-partitions, so Snowflake must look into every micro-partition to find the value. 
 
-A use case of using clustering in this dataset is: the company always need to look at the sales records on a single day. It requires to select the sales record on the date. An example of such query could be:
+A use case of using clustering in this dataset is: the company always needs to look at the sales records on a single day. It requires to select the sales record on the date. An example of such query could be:
 ```
 SELECT *
 FROM sales
@@ -232,7 +244,7 @@ WHERE to_date(Date) = '2020-01-02';
 ...
 ```
 
-If the table is not clustered on `Date`, the record on 2020-01-01 can exist on any micro-partition, so Snowflake must scan every micro-partition to get the result. If the table is clustered on `Date`, Snowflake can easily know if a micro-partition contains records on 2020-01-01 without going into the partition. This will boost the performance. 
+If the table is not clustered on `Date`, the record on 2020-01-01 could exist on any micro-partition, so Snowflake must scan every micro-partition to get the result. If the table is clustered on `Date`, Snowflake can easily know if a micro-partition contains records on 2020-01-01 without going into the partition. This will boost the performance. 
 
 Reference: [Clustering Keys & Clustered Tables](https://docs.snowflake.com/en/user-guide/tables-clustering-keys.html)
 
