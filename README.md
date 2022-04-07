@@ -29,7 +29,7 @@ Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDx
     - [Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation](#deliverable-3-materialized-views-clustering-run-script-drop-script-documentation)
       - [1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.](#1-give-two-specific-use-cases-where-clustering-and-materialized-views-may-be-beneficial-to-the-consumption-of-the-sales-data)
       - [2. Removal script.](#2-removal-script)
-      - [3. ?](#3-)
+      - [3. ReadMe.](#3-readme)
 
 ## Test
 ### 1. Set Up
@@ -181,5 +181,5 @@ Reference: [Clustering Keys & Clustered Tables](https://docs.snowflake.com/en/us
 #### 2. Removal script.
 See sql file and command in [Removal Script](#3-removal-script).
 
-#### 3. ?
+#### 3. ReadMe.
 TODO:
