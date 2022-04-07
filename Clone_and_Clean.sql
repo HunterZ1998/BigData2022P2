@@ -19,3 +19,12 @@ insert overwrite into employees
 select employeeid, initcap(firstname), initcap(middleinitial), initcap(lastname), initcap(region) from employees;
 insert overwrite into customers
 select customerid, initcap(firstname), initcap(middleinitial), initcap(lastname) from customers;
+
+--#Assign Primary/Foreign Keys
+ALTER TABLE customers ADD PRIMARY KEY (customerid);
+ALTER TABLE employees ADD PRIMARY KEY (employeeid);
+ALTER TABLE products ADD PRIMARY KEY (productid);
+ALTER TABLE sales ADD PRIMARY KEY (orderid);
+ALTER TABLE sales ADD FOREIGN KEY (employeeid) REFERENCES employees(employeeid);  
+ALTER TABLE sales ADD FOREIGN KEY (customerid) REFERENCES customers(customerid);  
+ALTER TABLE sales ADD FOREIGN KEY (productid) REFERENCES products(productid); 
