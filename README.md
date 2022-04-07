@@ -140,6 +140,8 @@ Run this command in terminal to remove the whole `yesql` database.
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f remove_all.sql
 ```
+Expected output:
+> YESQL_SALES successfully dropped.
 
 ## Notes (according to instruction)
 
@@ -149,7 +151,10 @@ See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-
 
 #### Step 2: Prepare Data for Business Consumption.
 ##### 1. Raw data quality issue
-TODO:
+(1) Problem: Mis-spelled column. Sales.SalesPersonID same as EmployeeID in Employees table
+
+Solution: Changed column name Sales.SalesPersonID to EmployeeID
+
 
 ##### 2. Create `curated` schema
 See sql file and command in [Run test files in order (6)](#2-run-test-files-in-order).
