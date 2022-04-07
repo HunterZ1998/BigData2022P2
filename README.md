@@ -66,8 +66,11 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f crea
 ```
 Expected output:
 > Table CUSTOMERS successfully created.
+> 
 > Table EMPLOYEES successfully created.
+> 
 > Table PRODUCTS successfully created.
+> 
 > Table SALES successfully created.
 
 4. Create file format object then create stage.
@@ -76,10 +79,15 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f crea
 ```
 Expected output:
 > File format CSV_FORMAT_VERTICAL_BAR successfully created.
+> 
 > File format CSV_FORMAT_COMMA successfully created.
+> 
 > Stage area CUSTOMERS_S3_STAGE successfully created.
+> 
 > Stage area EMPLOYEES_S3_STAGE successfully created.
+> 
 > Stage area PRODUCTS_S3_STAGE successfully created.
+> 
 > Stage area SALES_S3_STAGE successfully created.
 
 5. Load data.
@@ -87,9 +95,12 @@ Expected output:
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load_data.sql
 ```
 Expected output:
-> s3://seng5709/customers/Customers2.csv | LOADED |       19760 |       19760 |           1 |           0 
+> s3://seng5709/customers/Customers2.csv | LOADED |       19760 |       19760 |           1 |           0
+>  
 > s3://seng5709/employees/Employees2.csv | LOADED |          23 |          23 |           1 |           0
+> 
 > s3://seng5709/products/Products.csv | LOADED |         504 |         504 |           1 |           0
+> 
 > s3://seng5709/sales/Sales2.csv | LOADED |     6715221 |     6715221 |           1 |           0
 
 6. Create `curated` schema and clean data.
@@ -98,12 +109,19 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f Clon
 ```
 Expected output:
 > Schema CURATED successfully created.
+> 
 > Table CUSTOMERS successfully created.
+> 
 > Table EMPLOYEES successfully created.
+> 
 > Table PRODUCTS successfully created.
+> 
 > Table SALES successfully created.
+> 
 > number of rows inserted: 19759
+> 
 > number of rows inserted: 23
+> 
 > number of rows inserted: 19759
 
 7. Create views in `curated` schema.
@@ -112,7 +130,9 @@ snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f crea
 ```
 Expected output:
 > View CUSTOMER_MONTHLY_SALES_2019_VIEW successfully created.
+> 
 > View TOP_TEN_CUSTOMERS_AMOUNT_VIEW successfully created.
+> 
 > View PRODUCT_SALES_VIEW successfully created.
 
 
