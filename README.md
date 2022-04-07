@@ -24,12 +24,12 @@ Instruction: [Project 2 – Snowflake POC](https://drive.google.com/file/d/18eDx
       - [Step 2: Prepare Data for Business Consumption.](#step-2-prepare-data-for-business-consumption)
         - [1. Raw data quality issue](#1-raw-data-quality-issue)
         - [2. Create `curated` schema](#2-create-curated-schema)
-        - [3. ?](#3-)
+        - [3. Do data cleaning](#3-do-data-cleaning)
         - [4. Create views](#4-create-views)
     - [Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation](#deliverable-3-materialized-views-clustering-run-script-drop-script-documentation)
       - [1. Give two specific use cases where clustering and materialized views may be beneficial to the consumption of the sales data.](#1-give-two-specific-use-cases-where-clustering-and-materialized-views-may-be-beneficial-to-the-consumption-of-the-sales-data)
       - [2. Removal script.](#2-removal-script)
-      - [3. ?](#3--1)
+      - [3. ?](#3-)
 
 ## Test
 ### 1. Set Up
@@ -99,13 +99,13 @@ See sql files and commands in [Run test files in order (1-5)](#2-run-test-files-
 TODO:
 
 ##### 2. Create `curated` schema
-TODO:
+See sql file and command in [Run test files in order (6)](#2-run-test-files-in-order).
 
-##### 3. ?
-TODO:
+##### 3. Do data cleaning
+See sql file and command in [Run test files in order (6)](#2-run-test-files-in-order).
 
 ##### 4. Create views
-TODO:
+See sql file and command in [Run test files in order (7)](#2-run-test-files-in-order).
 
 ### Deliverable 3: Materialized Views, Clustering, Run Script, Drop Script, Documentation
 
