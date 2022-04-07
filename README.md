@@ -102,7 +102,7 @@ Expected output:
 > | s3://seng5709/products/Products.csv    | LOADED | 504         | 504         | 1           | 0           |
 > | s3://seng5709/sales/Sales2.csv         | LOADED | 6715221     | 6715221     | 1           | 0           |
 
-6. Create `curated` schema and clean data.
+6. Create `curated` schema, clean data, and add primary, foreign key to the data.
 ```
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f Clone_and_Clean.sql
 ```
