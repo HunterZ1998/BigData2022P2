@@ -95,13 +95,12 @@ Expected output:
 snowsql -a gu89366.us-east-2.aws -u tester --private-key-path rsa_key.p8 -f load_data.sql
 ```
 Expected output:
-> s3://seng5709/customers/Customers2.csv | LOADED |       19760 |       19760 |           1 |           0
->  
-> s3://seng5709/employees/Employees2.csv | LOADED |          23 |          23 |           1 |           0
-> 
-> s3://seng5709/products/Products.csv | LOADED |         504 |         504 |           1 |           0
-> 
-> s3://seng5709/sales/Sales2.csv | LOADED |     6715221 |     6715221 |           1 |           0
+> | file                                   | status | rows_parsed | rows_loaded | error_limit | errors_seen |
+> |----------------------------------------|--------|-------------|-------------|-------------|-------------|
+> | s3://seng5709/customers/Customers2.csv | LOADED | 19760       | 19760       | 1           | 0           |
+> | s3://seng5709/employees/Employees2.csv | LOADED | 23          | 23          | 1           | 0           |
+> | s3://seng5709/products/Products.csv    | LOADED | 504         | 504         | 1           | 0           |
+> | s3://seng5709/sales/Sales2.csv         | LOADED | 6715221     | 6715221     | 1           | 0           |
 
 6. Create `curated` schema and clean data.
 ```
