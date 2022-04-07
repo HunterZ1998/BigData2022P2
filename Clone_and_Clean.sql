@@ -8,7 +8,6 @@ CREATE OR REPLACE TABLE yesql_sales.curated.sales CLONE yesql_sales.raw.sales;
 USE SCHEMA curated;
 
 --# Change column names
-ALTER TABLE sales RENAME COLUMN produceid to productid;
 ALTER TABLE sales RENAME COLUMN salespersonid to employeeid;
 
 --# Drop duplicates 
