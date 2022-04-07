@@ -159,14 +159,14 @@ All tables checked to ensure:
 - Products table prices column was checked for zero or negative valued entries (48 products with price = 0, left in table to track inventory)
 
 ##### 1. Raw data quality issue
-(1) Problem: Mis-spelled column reference: Sales.SalesPersonID refers to the column EmployeeID in the Employees table.
-  Solution: Changed column name Sales.SalesPersonID to EmployeeID.
-(2) Problem: In the Employees table, the employee associated with EMPLOYEEID = 15, had the middle initial input as an apostrophe.
-  Solution: Enforce names must include at least one letter. EMPLOYEEID = 15 middle initial changed to NULL. 
-(3) Problem: Time zone of imported data unknown
-  Solution: No solution, as we do not know the origin time zone we cannot convert to UTC.
-(4) Problem: Case of STRING columns inconsistent (for example: could lead to alex and Alex being counted as different entries)
-  Solution: Capitalize first letter of all STRING field entries (except Products as they could be case sensitive)
+(1) Problem: Mis-spelled column reference: Sales.SalesPersonID refers to the column EmployeeID in the Employees table.\
+  Solution: Changed column name Sales.SalesPersonID to EmployeeID.\
+(2) Problem: In the Employees table, the employee associated with EMPLOYEEID = 15, had the middle initial input as an apostrophe.\
+  Solution: Enforce names must include at least one letter. EMPLOYEEID = 15 middle initial changed to NULL. \
+(3) Problem: Time zone of imported data unknown.\
+  Solution: No solution, as we do not know the origin time zone we cannot convert to UTC.\
+(4) Problem: Case of STRING columns inconsistent (for example: could lead to alex and Alex being counted as different entries).\
+  Solution: Capitalize first letter of all STRING field entries (except Products as they could be case sensitive).\
 
 ##### 2. Create `curated` schema
 See sql file and command in [Run test files in order (6)](#2-run-test-files-in-order).
