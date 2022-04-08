@@ -1,6 +1,7 @@
 --# Curated
 USE yesql_sales;
 CREATE OR REPLACE SCHEMA curated;
+USE schema curated;
 CREATE OR REPLACE TABLE yesql_sales.curated.customers CLONE yesql_sales.raw.customers;
 CREATE OR REPLACE TABLE yesql_sales.curated.employees CLONE yesql_sales.raw.employees;
 CREATE OR REPLACE TABLE yesql_sales.curated.products CLONE yesql_sales.raw.products;
